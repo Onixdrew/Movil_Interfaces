@@ -1,75 +1,75 @@
-// dependencias
-import 'package:flutter/material.dart';
-import 'package:flutter_application_3/dise%C3%B1o1/DatosPersonales.dart';
-import 'package:flutter_application_3/dise%C3%B1o1/barraEstado.dart';
-import 'package:flutter_application_3/dise%C3%B1o1/bodyContent.dart';
-import 'package:flutter_application_3/dise%C3%B1o1/controlador.dart';
-import 'package:flutter_application_3/dise%C3%B1o1/menuHamburguesa.dart';
-import 'package:get/get.dart';
+// // dependencias
+// import 'package:flutter/material.dart';
+// import 'package:flutter_application_3/dise%C3%B1o1/DatosPersonales.dart';
+// import 'package:flutter_application_3/dise%C3%B1o1/barraEstado.dart';
+// import 'package:flutter_application_3/dise%C3%B1o1/bodyContent.dart';
+// import 'package:flutter_application_3/dise%C3%B1o1/controlador.dart';
+// import 'package:flutter_application_3/dise%C3%B1o1/menuHamburguesa.dart';
+// import 'package:get/get.dart';
 
 
 
 
 
-void main(List<String> args) {
-  Get.put(Controlador());
-  runApp(const Home());
-}
+// void main(List<String> args) {
+//   Get.put(Controlador());
+//   runApp(const Home());
+// }
 
 
-// creo una instancia del controlador
+// // creo una instancia del controlador
 
-Controlador controladorBody = Get.find();
-
-
-
+// Controlador controladorBody = Get.find();
 
 
 
 
-class Home extends StatefulWidget {
-  const Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
 
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          appBar: barraEstado(),
-          drawer: drawerP(),
-          body: Obx(()=> coleccioPaginas[controladorBody.cambioVista])),
-    );
-  }
-}
 
-///////////////////////
+// class Home extends StatefulWidget {
+//   const Home({super.key});
 
-List coleccioPaginas = [
-  bodyContent(),
-  datosPersonales(),
-  experienciaLaboral(),
-];
+//   @override
+//   State<Home> createState() => _HomeState();
+// }
 
-// //////////////
+// class _HomeState extends State<Home> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//           appBar: barraEstado(),
+//           drawer: drawerP(),
+//           body: Obx(()=> coleccioPaginas[controladorBody.cambioVista])),
+//     );
+//   }
+// }
 
-experienciaLaboral() {
-  return ListView.builder(
-    itemCount: datosLaborales.length,
-    itemBuilder: (BuildContext context, int index) {
-      return ListTile(
-        title: Text(datosLaborales[index]['empresa']),
-        subtitle: Text(datosLaborales[index]['puesto']),
-        leading: const Icon(Icons.arrow_circle_right),
-        onTap: () {},
-      );
-    },
-  );
-}
+// ///////////////////////
+
+// List coleccioPaginas = [
+//   bodyContent(),
+//   datosPersonales(),
+//   experienciaLaboral(),
+// ];
+
+// // //////////////
+
+// experienciaLaboral() {
+//   return ListView.builder(
+//     itemCount: datosLaborales.length,
+//     itemBuilder: (BuildContext context, int index) {
+//       return ListTile(
+//         title: Text(datosLaborales[index]['empresa']),
+//         subtitle: Text(datosLaborales[index]['puesto']),
+//         leading: const Icon(Icons.arrow_circle_right),
+//         onTap: () {},
+//       );
+//     },
+//   );
+// }
 
 List datosLaborales = [
   {
